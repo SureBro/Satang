@@ -7,7 +7,7 @@ Node Module to manage money information.
 
 ### How to use
 
-Initializing
+##### Initializing
 ```
 import Satang, {Currencies} from 'path/to/Satang';
 
@@ -16,7 +16,8 @@ import Satang, {Currencies} from 'path/to/Satang';
 const price = new Satang(10000, Currencies.THB); 
 ```
 
-Display
+##### Display
+
 You can get a pretty string that represents your money by using the `display()` method
 
 ```
@@ -24,7 +25,8 @@ const price = new Satang(10000, Currencies.THB);
 price.display(); // output => ฿100.00
 ```
 
-Satang Manipulation
+##### Satang Manipulation
+
 You can manipulate satang value. To add 2 satangs, you can use the `add()` method
 
 ```
@@ -42,5 +44,5 @@ You can also chain manipulations
 cartPrice.add(product1Price).add(product2Price).display(); // output => ฿250.00
 ```
 
-### Tests
+##### Tests
 To test, run `npm run test`
