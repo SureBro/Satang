@@ -2,8 +2,8 @@
 Node Module to manage money information.
 
 -------
-
 ### This is not ready to be used in production. 
+-------
 
 ### How to use
 
