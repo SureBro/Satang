@@ -55,6 +55,5 @@ test('it can be manipulated by adding a satang', () => {
   const cartPrice = new Satang(Currencies.THB, 0);
 
   cartPrice.add(productOnePrice).add(productTwoPrice);
-  console.log(cartPrice.display());
   expect(cartPrice.money).toBe(240040);
 });
