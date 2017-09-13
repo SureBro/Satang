@@ -27,7 +27,7 @@ import Satang, { Currencies } from 'path/to/Satang';
 const price = new Satang(10000, Currencies.THB); 
 ```
 
-### Display
+### Pretty String
 
 You can get a pretty string that represents your money by using the `display()` method
 
