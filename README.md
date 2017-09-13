@@ -11,7 +11,12 @@ Node Module to manage money information.
 
 Install via npm
 ```
-npm install satang
+npm install satang --save
+```
+
+Install via yarn
+```
+yarn add satang
 ```
 
 ##### Initializing
