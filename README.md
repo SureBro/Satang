@@ -7,11 +7,18 @@ Node Module to manage money information.
 
 ### How to use
 
-##### Initializing
-```
-import Satang, {Currencies} from 'path/to/Satang';
+##### Install
 
-// First param is the amount of money in subunits. To map $100, amount is 10000.
+Install via npm
+```
+npm install satang
+```
+
+##### Initializing
+```javascript
+import Satang, { Currencies } from 'path/to/Satang';
+
+// First param is the amount of money in subunits. To map $100, amount should be 10000.
 // Only Currencies.THB and Currencies.USD are supported
 const price = new Satang(10000, Currencies.THB); 
 ```
@@ -20,7 +27,7 @@ const price = new Satang(10000, Currencies.THB);
 
 You can get a pretty string that represents your money by using the `display()` method
 
-```
+```javascript
 const price = new Satang(10000, Currencies.THB);
 price.display(); // output => ฿100.00
 ```
@@ -29,7 +36,7 @@ price.display(); // output => ฿100.00
 
 You can manipulate satang value. To add 2 satangs, you can use the `add()` method
 
-```
+```javascript
  const cartPrice = new Satang(0, Currencies.THB);
  const product1Price = new Satang(10000, Currencies.THB);
  const product2Price = new Satang(15000, Currencies.THB);
@@ -40,7 +47,7 @@ You can manipulate satang value. To add 2 satangs, you can use the `add()` metho
 
 You can also chain manipulations
 
-```
+```javascript
 cartPrice.add(product1Price).add(product2Price).display(); // output => ฿250.00
 ```
 
