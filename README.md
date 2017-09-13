@@ -55,6 +55,3 @@ You can also chain manipulations
 ```javascript
 cartPrice.add(product1Price).add(product2Price).display(); // output => ฿250.00
 ```
-
-##### Tests
-To test, run `npm run test`
