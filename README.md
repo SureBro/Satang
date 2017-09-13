@@ -2,12 +2,10 @@
 Node Module to manage money information.
 
 -------
-### This is not ready to be used in production. 
+### This is not ready to be used in production
 -------
 
-### How to use
-
-##### Install
+### Install
 
 Install via npm
 ```
@@ -19,7 +17,8 @@ Install via yarn
 yarn add satang
 ```
 
-##### Initializing
+### Initializing
+
 ```javascript
 import Satang, { Currencies } from 'path/to/Satang';
 
@@ -28,7 +27,7 @@ import Satang, { Currencies } from 'path/to/Satang';
 const price = new Satang(10000, Currencies.THB); 
 ```
 
-##### Display
+### Display
 
 You can get a pretty string that represents your money by using the `display()` method
 
@@ -37,7 +36,7 @@ const price = new Satang(10000, Currencies.THB);
 price.display(); // output => ฿100.00
 ```
 
-##### Satang Manipulation
+### Satang Manipulation
 
 You can manipulate satang value. To add 2 satangs, you can use the `add()` method
 
