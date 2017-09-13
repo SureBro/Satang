@@ -57,7 +57,6 @@ class Satang {
 
     this.baseCurrency = CurrencyData[baseCurrency];
     this.money = money;
-
   }
 
   /**

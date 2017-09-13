@@ -1,6 +1,6 @@
 {
   "name": "satang",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Satang is a money managing package for Javascript",
   "main": "lib/index.js",
   "scripts": {
