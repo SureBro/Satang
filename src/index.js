@@ -89,6 +89,14 @@ class Satang {
 
     return this;
   }
+
+  /**
+   * Returns supported currencies array.
+   * @return {Array} An array of objects. Each Object represents a currency
+   */
+  supportedCurrencies() {
+    return values(CurrencyData);
+  }
 }
 
 export default Satang;

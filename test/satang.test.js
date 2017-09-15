@@ -57,3 +57,10 @@ test('it can be manipulated by adding a satang', () => {
   cartPrice.add(productOnePrice).add(productTwoPrice);
   expect(cartPrice.money).toBe(240040);
 });
+
+test('it returns an array of supported currency info', () => {
+  const productPrice = new Satang(Currencies.THB, 100020);
+  const expectedValue = values(CurrencyData);
+
+  expect(productPrice.supportedCurrencies()).toEqual(expectedValue);
+});

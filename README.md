@@ -24,7 +24,7 @@ import Satang, { Currencies } from 'path/to/Satang';
 
 // First param is the amount of money in subunits. To map $100, amount should be 10000.
 // Only Currencies.THB and Currencies.USD are supported
-const price = new Satang(10000, Currencies.THB); 
+const price = new Satang(10000, Currencies.THB);
 ```
 
 ### Pretty String
@@ -44,7 +44,7 @@ You can manipulate satang value. To add 2 satangs, you can use the `add()` metho
  const cartPrice = new Satang(0, Currencies.THB);
  const product1Price = new Satang(10000, Currencies.THB);
  const product2Price = new Satang(15000, Currencies.THB);
- 
+
  cartPrice.add(product1Price);
  cartPrice.display(); // output => ฿100.00
 ```
@@ -53,4 +53,15 @@ You can also chain manipulations
 
 ```javascript
 cartPrice.add(product1Price).add(product2Price).display(); // output => ฿250.00
+```
+
+### Supported Currencies
+
+At the moment, Satang only supports USD & THB. Frankly, it's not the best implementation for currency support and it will be changed in the future. You can get access to supported currency using two methods
+
+- Just import it using `import { CurrencyData} from 'satang'`
+
+- Second, you can access supported currency data from a Satang instance using the `supportedCurrencies()` method.
+```javascript
+cartPrice.supportedCurrencies();
 ```
