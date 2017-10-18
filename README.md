@@ -24,7 +24,7 @@ import Satang, { Currencies } from 'path/to/Satang';
 
 // First param is the amount of money in subunits. To map $100, amount should be 10000.
 // Only Currencies.THB and Currencies.USD are supported
-const price = new Satang(10000, Currencies.THB);
+const price = new Satang(Currencies.THB, 10000);
 ```
 
 ### Pretty String
@@ -32,7 +32,7 @@ const price = new Satang(10000, Currencies.THB);
 You can get a pretty string that represents your money by using the `display()` method
 
 ```javascript
-const price = new Satang(10000, Currencies.THB);
+const price = new Satang(Currencies.THB, 10000);
 price.display(); // output => ฿100.00
 ```
 
@@ -41,9 +41,9 @@ price.display(); // output => ฿100.00
 You can manipulate satang value. To add 2 satangs, you can use the `add()` method
 
 ```javascript
- const cartPrice = new Satang(0, Currencies.THB);
- const product1Price = new Satang(10000, Currencies.THB);
- const product2Price = new Satang(15000, Currencies.THB);
+ const cartPrice = new Satang(Currencies.THB, 0);
+ const product1Price = new Satang(Currencies.THB, 10000);
+ const product2Price = new Satang(Currencies.THB, 15000);
 
  cartPrice.add(product1Price);
  cartPrice.display(); // output => ฿100.00
