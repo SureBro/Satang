@@ -59,9 +59,9 @@ cartPrice.add(product1Price).add(product2Price).display(); // output => ฿250.0
 
 At the moment, Satang only supports USD & THB. Frankly, it's not the best implementation for currency support and it will be changed in the future. You can get access to supported currency using two methods
 
-- Just import it using `import { CurrencyData } from 'satang'`
+- Just import it using `import { Currencies } from 'satang'`
 
-- Second, you can access supported currency data from a Satang instance using the `supportedCurrencies()` method.
+- Second, you can access supported currency data from  using the `supportedCurrencies()` method.
 ```javascript
-cartPrice.supportedCurrencies();
+Satang.supportedCurrencies();
 ```
