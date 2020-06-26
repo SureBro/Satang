@@ -27,6 +27,18 @@ import Satang, { Currencies } from 'path/to/Satang';
 const price = new Satang(Currencies.THB, 10000);
 ```
 
+You could also directly import Thai baht currency directly,
+
+```javascript
+import Satang, { ThaiBaht } from 'path/to/Satang';
+
+// First param is the amount of money in subunits. To map $100, amount should be 10000.
+// Only Currencies.THB and Currencies.USD are supported
+const price = new Satang(ThaiBaht, 10000);
+```
+
+Supported currencies are **ThaiBaht** & **USD**
+
 ### Pretty String
 
 You can get a pretty string that represents your money by using the `display()` method

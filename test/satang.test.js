@@ -6,7 +6,7 @@ test('it throws an error when initialized with unsupported currency', () => {
 });
 
 test('it throws an error is money is not a number', () => {
-  expect(() => new Satang(ThaiBaht, '100')).toThrowError('Money is not a number');
+  expect(() => new Satang(Currencies.THB, '100')).toThrowError('Money is not a number');
   expect(() => new Satang(ThaiBaht, NaN)).toThrowError('Money is not a number');
   expect(() => new Satang(ThaiBaht, Infinity)).toThrowError('Get out');
 });
