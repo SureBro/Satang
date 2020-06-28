@@ -60,14 +60,30 @@ test('it returns an array of supported currency info', () => {
 });
 
 test('it accepts custom Currency', () => {
-  const Euro = new Currency({
+  class EuroCurrency extends Currency {
+    constructor(props) {
+      super(props);
+    }
+
+    display(moneyInSubunits) {
+      const formatter = new Intl.NumberFormat(this.locale, { 
+        style: 'currency', 
+        currency: this.code 
+      });
+
+      const money = Math.round(moneyInSubunits / 100);
+      return `<strong>${formatter.format(money)}</strong>`;
+    }
+  }
+
+  const Euro = new EuroCurrency({
     symbol: '€',
-    code: 'eur',
+    code: 'EUR',
     prettyCode: 'EUR',
     fullName: 'Euro',
-    locale: 'de-AT'
+    locale: 'de-DE'
   });
 
   const priceInEur = new Satang(Euro, 9000);
-  expect(priceInEur.display()).toBe('€90.00');
+  expect(priceInEur.display()).toBe('<strong>90,00 €</strong>');
 });
