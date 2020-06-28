@@ -1,4 +1,3 @@
-import { isNumber } from 'lodash';
 import Currency from './Currency';
 
 /**
@@ -40,12 +39,12 @@ class Satang {
       throw new Error(`Unrecognized base currency: baseCurrency should be an instance of Currency class. Check the docs for more info`);
     }
 
-    if (!isNumber(money) || isNaN(money)) {
-      throw new Error('Money is not a number');
-    }
-
     if (money === Infinity) {
       throw new Error('Get out');
+    }
+
+    if (!Number.isFinite(money) || isNaN(money)) {
+      throw new Error('Money is not a number');
     }
 
     if (money < 0) {
