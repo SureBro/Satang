@@ -144,4 +144,4 @@ Install the icu file with `npm install full-icu`
 
 then point to the icu dataset by `NODE_ICU_DATA=node_modules/full-icu node app.js`
 
-Just keep in mind that this means binary size is going to increase. [https://github.com/unicode-org/full-icu-npm](Read more here)
+Just keep in mind that this means binary size is going to increase. [Read more here](https://github.com/unicode-org/full-icu-npm)
