@@ -7,14 +7,14 @@ import Currency from './Currency';
 
 export const ThaiBaht = new Currency({
   symbol: '฿',
-  code: 'thb',
+  code: 'THB',
   prettyCode: 'THB',
   fullName: 'Thai Baht',
   locale: 'th-TH'
 });
 export const USD = new Currency({
   symbol: '$',
-  code: 'usd',
+  code: 'USD',
   prettyCode: 'USD',
   fullName: 'United States Dollar',
   locale: 'en-US'
@@ -69,10 +69,7 @@ class Satang {
    * @return {String}
    */
   display() {
-    const moneyInSubunit = this.money;
-    const miuString =  (Math.round(moneyInSubunit) / 100).toLocaleString(this.baseCurrency.locale, { minimumFractionDigits: 2 });
-
-    return `${this.baseCurrency.symbol}${miuString}`;
+    return this.baseCurrency.display(this.money);
   }
 
   /**
