@@ -1,4 +1,4 @@
-import Satang, { Currencies, ThaiBaht, USD } from '../src';
+import Satang, { Currencies, ThaiBaht, USD, Currency } from '../src';
 
 test('it throws an error when initialized with unsupported currency', () => {
   expect(() => new Satang('thb', 1000))
@@ -57,4 +57,17 @@ test('it returns an array of supported currency info', () => {
   const expectedValue = Object.values(Currencies);
 
   expect(Satang.supportedCurrencies()).toEqual(expectedValue);
+});
+
+test('it accepts custom Currency', () => {
+  const Euro = new Currency({
+    symbol: '€',
+    code: 'eur',
+    prettyCode: 'EUR',
+    fullName: 'Euro',
+    locale: 'de-AT'
+  });
+
+  const priceInEur = new Satang(Euro, 9000);
+  expect(priceInEur.display()).toBe('€90.00');
 });

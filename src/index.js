@@ -25,6 +25,10 @@ export const Currencies = {
   USD: USD
 };
 
+export {
+  Currency,
+};
+
 class Satang {
   /**
    * constructor for the Satang class
