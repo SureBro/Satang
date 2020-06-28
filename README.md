@@ -20,7 +20,7 @@ yarn add satang
 ### Initializing
 
 ```javascript
-import Satang, { Currencies } from 'path/to/Satang';
+import Satang, { Currencies } from 'satang';
 
 // First param is the amount of money in subunits. To map $100, amount should be 10000.
 // Only Currencies.THB and Currencies.USD are supported
@@ -30,7 +30,7 @@ const price = new Satang(Currencies.THB, 10000);
 You could also directly import Thai baht currency directly,
 
 ```javascript
-import Satang, { ThaiBaht } from 'path/to/Satang';
+import Satang, { ThaiBaht } from 'satang';
 
 // First param is the amount of money in subunits. To map $100, amount should be 10000.
 // Only Currencies.THB and Currencies.USD are supported
@@ -77,3 +77,27 @@ At the moment, Satang only supports USD & THB. Frankly, it's not the best implem
 ```javascript
 Satang.supportedCurrencies();
 ```
+
+### Custom Currencies
+
+If you'd like to use a custom currency, you'll need to create an instance of `Currency`. Here's an example:
+
+```javascript
+import Satang, { Currency } from 'satang';
+
+const Euro = new Currency({
+  // Symbol used when display-ing value for this currency,
+  symbol: '€',
+  // Short code, should be unique
+  code: 'eur',
+  // Will be used when dispay-ing value for this currency
+  prettyCode: 'EUR',
+  // Name of the currency
+  fullName: 'Euro',
+  // Locale used to format string displaying the value of the currency
+  locale: 'de-AT'
+});
+
+const price = new Satang(Euro, 9000);
+
+console.log(price.display()); // Logs €90.00
