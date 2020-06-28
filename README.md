@@ -100,7 +100,7 @@ const Euro = new Currency({
 
 const price = new Satang(Euro, 9000);
 
-console.log(price.display()); // Logs €90.00
+console.log(price.display()); // Logs € 90,00
 ```
 
 If you would like to more control over the display function, you can inherit Currency to create your own Currency instead
