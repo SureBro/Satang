@@ -101,3 +101,46 @@ const Euro = new Currency({
 const price = new Satang(Euro, 9000);
 
 console.log(price.display()); // Logs €90.00
+
+If you would like to more control over the display function, you can inherit Currency to create your own Currency instead
+
+Eg: 
+```javascript
+class EuroCurrency extends Currency {
+  constructor(props) {
+    super(props);
+  }
+
+  display(moneyInSubunits) {
+    const formatter = new Intl.NumberFormat(this.locale, { 
+      style: 'currency', 
+      currency: this.code 
+    });
+
+    const money = Math.round(moneyInSubunits / 100);
+    return `<strong>${formatter.format(money)}</strong>`;
+  }
+}
+
+const Euro = new EuroCurrency({
+  symbol: '€',
+  code: 'EUR',
+  prettyCode: 'EUR',
+  fullName: 'Euro',
+  locale: 'de-DE'
+});
+
+const priceInEur = new Satang(Euro, 9000);
+
+priceInEur.display(); // Return <strong>90,00 €</strong>
+```
+
+### Note
+
+If your currency display doesn't match your expected format and you are running in node environment, you might be missing **ICU** data file.
+
+Install the icu file with `npm install full-icu`
+
+then point to the icu dataset by `NODE_ICU_DATA=node_modules/full-icu node app.js`
+
+Just keep in mind that this means binary size is going to increase. [https://github.com/unicode-org/full-icu-npm](Read more here)
